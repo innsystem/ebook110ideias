@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -62,6 +63,12 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				}
+			},
+			backgroundImage: {
+				'gradient-blue': 'linear-gradient(135deg, #4F46E5 0%, #3B82F6 100%)',
+				'gradient-purple': 'linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%)',
+				'gradient-dark': 'linear-gradient(135deg, #1E293B 0%, #0F172A 100%)',
+				'gradient-cyan': 'linear-gradient(135deg, #06B6D4 0%, #3B82F6 100%)',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
