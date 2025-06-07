@@ -79,6 +79,41 @@ html {
     pointer-events: none;
 }
 
+/* Parallax Sections */
+.parallax-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-bg-parallax,
+.parallax-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('background.webp');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.hero-bg-parallax {
+    opacity: 0.05;
+}
+
+@media (max-width: 768px) {
+
+    .hero-bg-parallax,
+    .parallax-bg {
+        background-attachment: scroll;
+        height: 100%;
+    }
+}
+
 /* Ebook Mockups */
 .ebook-mockup,
 .ebook-mockup-2 {
@@ -87,33 +122,35 @@ html {
 }
 
 .ebook-cover {
-    width: 300px;
-    height: 400px;
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
-    transform: rotateY(-15deg) rotateX(5deg);
+    width: 350px;
+    height: 450px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.1);
+    transform: rotateY(-10deg) rotateX(5deg);
     transition: transform 0.3s ease;
     position: relative;
 }
 
-.ebook-cover::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
-    height: 80%;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>') no-repeat center;
-    background-size: 60px;
-    opacity: 0.8;
+.ebook-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1rem;
 }
 
 .ebook-cover-2 {
-    width: 250px;
-    height: 330px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-    transform: rotateY(15deg) rotateX(-5deg);
+    width: 300px;
+    height: 380px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.1);
+    transform: rotateY(10deg) rotateX(-5deg);
     transition: transform 0.3s ease;
+    aspect-ratio: 3/4;
+}
+
+.ebook-cover-2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1rem;
 }
 
 .ebook-mockup:hover .ebook-cover,
@@ -122,23 +159,25 @@ html {
 }
 
 /* Author Photo */
-.author-photo .author-placeholder {
-    width: 350px;
-    height: 350px;
-    position: relative;
+.author-photo {
+    width: 100%;
+    max-width: 350px;
+    aspect-ratio: 1;
 }
 
-.author-placeholder::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 120px;
-    height: 120px;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>') no-repeat center;
-    background-size: 80px;
-    opacity: 0.6;
+.author-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1rem;
+}
+
+/* Novo estilo para o contêiner principal da seção do autor */
+.author-main-card {
+    background-color: var(--dark-color);
+    /* Usa a variável de cor escura */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    /* Borda branca sutil */
 }
 
 /* Card Hover Effects */
@@ -172,6 +211,10 @@ html {
     box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
 }
 
+.rounded-pill {
+    border-radius: 50px !important;
+}
+
 .btn-warning {
     background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
     border: none;
@@ -188,6 +231,7 @@ html {
 .accordion-button {
     border-radius: 0.75rem !important;
     margin-bottom: 0.5rem;
+    font-size: 1.2rem;
 }
 
 .accordion-button:focus {
@@ -199,6 +243,7 @@ html {
     background-color: transparent;
     color: white;
     box-shadow: none;
+    font-size: 1.4rem;
 }
 
 .accordion-item {
@@ -206,6 +251,16 @@ html {
     border-radius: 0.75rem !important;
     margin-bottom: 1rem;
     background: transparent;
+}
+
+.accordion-body {
+    color: #FFF;
+}
+
+.card-gradient {
+    background: linear-gradient(180deg, rgba(19, 67, 145, 0.411) 0%, rgba(0, 0, 0, 0) 100%);
+    border-radius: 1rem;
+    padding: 2rem;
 }
 
 /* Scroll Animation Styles */
@@ -254,9 +309,11 @@ html {
     0% {
         opacity: 1;
     }
+
     50% {
         opacity: 0.5;
     }
+
     100% {
         opacity: 1;
     }
@@ -272,35 +329,53 @@ html {
         padding-top: 100px;
         text-align: center;
     }
-    
+
     .ebook-cover {
-        width: 250px;
-        height: 330px;
+        width: 280px;
+        height: 360px;
         margin: 0 auto 2rem;
+        transform: rotateY(0deg) rotateX(0deg);
     }
-    
+
     .ebook-cover-2 {
-        width: 200px;
-        height: 260px;
+        width: 250px;
+        height: 320px;
+        margin: 0 auto 2rem;
+        transform: rotateY(0deg) rotateX(0deg);
+    }
+
+    .author-photo {
+        max-width: 250px !important;
         margin: 0 auto 2rem;
     }
-    
-    .author-placeholder {
-        width: 250px !important;
-        height: 250px !important;
-        margin: 0 auto 2rem;
+
+    .display-1 {
+        font-size: 3rem !important;
     }
-    
+
+    .display-2 {
+        font-size: 2.5rem !important;
+    }
+
+    .display-3 {
+        font-size: 2.5rem !important;
+    }
+
     .display-4 {
         font-size: 2.5rem !important;
     }
-    
+
     .display-5 {
         font-size: 2rem !important;
     }
-    
+
     .display-6 {
         font-size: 1.75rem !important;
+    }
+
+    .col-lg-5,
+    .col-lg-7 {
+        text-align: center;
     }
 }
 
@@ -312,8 +387,8 @@ section {
 
 /* Text Selection */
 ::selection {
-    background: rgba(79, 70, 229, 0.2);
-    color: #1e293b;
+    background: rgba(67, 81, 156, 0.2);
+    color: #d6d6d6;
 }
 
 /* Focus States */
@@ -373,5 +448,37 @@ section {
 .border-gradient {
     border: 2px solid transparent;
     background: linear-gradient(white, white) padding-box,
-                var(--gradient-blue) border-box;
+        var(--gradient-blue) border-box;
+}
+
+.object-fit-cover {
+    object-fit: cover;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.h-100 {
+    height: 100%;
+}
+
+.object-fit-contain {
+    object-fit: contain;
+}
+
+/* Author image centered */
+.author-centered-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+.author-image-container {
+    position: absolute;
+    width: 100% !important;
+    height: 100% !important;
+    overflow: hidden;
+    transform: scale(1.8);
 }

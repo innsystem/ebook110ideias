@@ -69,10 +69,11 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // ==========================================
-    // NAVBAR SCROLL EFFECTS
+    // NAVBAR SCROLL EFFECTS & PARALLAX
     // ==========================================
     
     const navbar = document.querySelector('.navbar');
+    const parallaxElements = document.querySelectorAll('.hero-bg-parallax, .parallax-bg');
     let lastScrollTop = 0;
 
     window.addEventListener('scroll', function() {
@@ -123,8 +124,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // ==========================================
     
     // Add click tracking for all CTA buttons
-    const ctaButtons = document.querySelectorAll('button:contains("Quero"), button:contains("Comprar"), button:contains("Adquirir")');
-    
     function addCTAListeners() {
         const buttons = document.querySelectorAll('button');
         buttons.forEach(button => {
