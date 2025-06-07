@@ -6,8 +6,12 @@ const HeroSection = () => {
   return (
     <section className="flex items-center justify-between px-8 py-16 text-white min-h-[600px]">
       <div className="w-1/2 pr-8">
-        <div className="bg-blue-600 rounded-3xl aspect-square max-w-md mx-auto">
-          {/* Placeholder para a imagem do ebook */}
+        <div className="bg-blue-600 rounded-3xl aspect-square max-w-md mx-auto relative overflow-hidden">
+          <img 
+            src="/ebook.webp" 
+            alt="110 Ideias Infalíveis para Criar Conteúdo sem Travar" 
+            className="w-full h-full object-cover rounded-3xl"
+          />
         </div>
       </div>
       

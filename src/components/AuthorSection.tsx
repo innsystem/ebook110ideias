@@ -7,8 +7,12 @@ const AuthorSection = () => {
       <div className="max-w-6xl mx-auto">
         <div className="flex items-center justify-between">
           <div className="w-1/2 pr-8">
-            <div className="bg-gray-900 rounded-3xl aspect-square">
-              {/* Placeholder para a imagem do autor */}
+            <div className="rounded-3xl aspect-square overflow-hidden">
+              <img 
+                src="/murilo.webp" 
+                alt="Murilo Milanese" 
+                className="w-full h-full object-cover rounded-3xl"
+              />
             </div>
           </div>
           
