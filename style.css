@@ -1,0 +1,377 @@
+/* ==========================================
+   CUSTOM CSS STYLES - 110 Ideias Ebook
+   ========================================== */
+
+/* Root Variables */
+:root {
+    --primary-color: #4f46e5;
+    --secondary-color: #6366f1;
+    --success-color: #10b981;
+    --warning-color: #f59e0b;
+    --dark-color: #1e293b;
+    --gradient-dark: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    --gradient-purple: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    --gradient-cyan: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+    --gradient-blue: linear-gradient(135deg, #4f46e5 0%, #3b82f6 100%);
+}
+
+/* Global Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #374151;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom Background Gradients */
+.bg-gradient-dark {
+    background: var(--gradient-dark) !important;
+}
+
+.bg-gradient-purple {
+    background: var(--gradient-purple) !important;
+}
+
+.bg-gradient-cyan {
+    background: var(--gradient-cyan) !important;
+}
+
+.bg-gradient-blue {
+    background: var(--gradient-blue) !important;
+}
+
+/* Navigation Styles */
+.navbar {
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-nav .nav-link {
+    font-weight: 500;
+    padding: 0.5rem 1rem !important;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #60a5fa !important;
+}
+
+/* Hero Section */
+.hero-section {
+    padding-top: 120px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(ellipse at center, rgba(79, 70, 229, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+/* Ebook Mockups */
+.ebook-mockup,
+.ebook-mockup-2 {
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+.ebook-cover {
+    width: 300px;
+    height: 400px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+    transform: rotateY(-15deg) rotateX(5deg);
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.ebook-cover::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>') no-repeat center;
+    background-size: 60px;
+    opacity: 0.8;
+}
+
+.ebook-cover-2 {
+    width: 250px;
+    height: 330px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    transform: rotateY(15deg) rotateX(-5deg);
+    transition: transform 0.3s ease;
+}
+
+.ebook-mockup:hover .ebook-cover,
+.ebook-mockup-2:hover .ebook-cover-2 {
+    transform: rotateY(0deg) rotateX(0deg) scale(1.05);
+}
+
+/* Author Photo */
+.author-photo .author-placeholder {
+    width: 350px;
+    height: 350px;
+    position: relative;
+}
+
+.author-placeholder::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 120px;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>') no-repeat center;
+    background-size: 80px;
+    opacity: 0.6;
+}
+
+/* Card Hover Effects */
+.card {
+    transition: all 0.3s ease;
+    border: none !important;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Button Styles */
+.btn {
+    font-weight: 600;
+    border-radius: 0.75rem;
+    transition: all 0.3s ease;
+    text-transform: none;
+}
+
+.btn-primary {
+    background: var(--gradient-blue);
+    border: none;
+    box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);
+}
+
+.btn-primary:hover {
+    background: var(--gradient-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+}
+
+.btn-warning {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    border: none;
+    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+}
+
+.btn-warning:hover {
+    background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(245, 158, 11, 0.4);
+}
+
+/* Accordion Styles */
+.accordion-button {
+    border-radius: 0.75rem !important;
+    margin-bottom: 0.5rem;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+    border-color: transparent;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: transparent;
+    color: white;
+    box-shadow: none;
+}
+
+.accordion-item {
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 0.75rem !important;
+    margin-bottom: 1rem;
+    background: transparent;
+}
+
+/* Scroll Animation Styles */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
+}
+
+.animate-on-scroll.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Scroll to top button */
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--gradient-blue);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);
+}
+
+.scroll-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-to-top:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+}
+
+/* Loading Animation */
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.loading {
+    animation: pulse 2s infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-section {
+        padding-top: 100px;
+        text-align: center;
+    }
+    
+    .ebook-cover {
+        width: 250px;
+        height: 330px;
+        margin: 0 auto 2rem;
+    }
+    
+    .ebook-cover-2 {
+        width: 200px;
+        height: 260px;
+        margin: 0 auto 2rem;
+    }
+    
+    .author-placeholder {
+        width: 250px !important;
+        height: 250px !important;
+        margin: 0 auto 2rem;
+    }
+    
+    .display-4 {
+        font-size: 2.5rem !important;
+    }
+    
+    .display-5 {
+        font-size: 2rem !important;
+    }
+    
+    .display-6 {
+        font-size: 1.75rem !important;
+    }
+}
+
+/* Section Spacing */
+section {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Text Selection */
+::selection {
+    background: rgba(79, 70, 229, 0.2);
+    color: #1e293b;
+}
+
+/* Focus States */
+*:focus {
+    outline: 2px solid rgba(79, 70, 229, 0.5);
+    outline-offset: 2px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--gradient-blue);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color);
+}
+
+/* Animation delays for staggered effects */
+.animate-on-scroll[data-delay="100"] {
+    transition-delay: 0.1s;
+}
+
+.animate-on-scroll[data-delay="200"] {
+    transition-delay: 0.2s;
+}
+
+.animate-on-scroll[data-delay="300"] {
+    transition-delay: 0.3s;
+}
+
+.animate-on-scroll[data-delay="400"] {
+    transition-delay: 0.4s;
+}
+
+.animate-on-scroll[data-delay="500"] {
+    transition-delay: 0.5s;
+}
+
+.animate-on-scroll[data-delay="600"] {
+    transition-delay: 0.6s;
+}
+
+/* Utility Classes */
+.shadow-custom {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.border-gradient {
+    border: 2px solid transparent;
+    background: linear-gradient(white, white) padding-box,
+                var(--gradient-blue) border-box;
+}
