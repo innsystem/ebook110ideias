@@ -238,7 +238,8 @@ html {
 .accordion-button {
     border-radius: 0.75rem !important;
     margin-bottom: 0.5rem;
-    font-size: 1.2rem;
+    font-size: 1.0rem;
+    background: transparent;
 }
 
 .accordion-button:focus {
@@ -247,10 +248,10 @@ html {
 }
 
 .accordion-button:not(.collapsed) {
-    background-color: transparent;
+    background-color: var(--bs-primary);
     color: white;
     box-shadow: none;
-    font-size: 1.4rem;
+    font-size: 1.1rem;
 }
 
 .accordion-item {
@@ -401,12 +402,6 @@ html {
 section {
     position: relative;
     overflow: hidden;
-}
-
-/* Focus States */
-*:focus {
-    outline: 2px solid rgba(79, 70, 229, 0.5);
-    outline-offset: 2px;
 }
 
 /* Custom Scrollbar */
