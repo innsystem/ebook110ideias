@@ -27,7 +27,13 @@ html {
     scroll-behavior: smooth;
 }
 
-.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl{
+.container,
+.container-fluid,
+.container-lg,
+.container-md,
+.container-sm,
+.container-xl,
+.container-xxl {
     padding-right: calc(var(--bs-gutter-x) * 1);
     padding-left: calc(var(--bs-gutter-x) * 1);
 }
@@ -471,4 +477,19 @@ section {
 
 .object-fit-contain {
     object-fit: contain;
+}
+
+.ebook-mockup {
+    position: relative;
+}
+
+.ebook-mockup::before {
+    content: '';
+    position: absolute;
+    top: 10%;
+    left: 8%;
+    width: 85%;
+    height: 80%;
+    border-radius: 20px;
+    background: #3e7bf4;
 }
